@@ -8,7 +8,7 @@
       'product.label':'ПЕРВЫЙ В КОЛЛЕКЦИИ','product.status':'ДОСТУПЕН','product.tag':'Автокликер с котиком','product.desc':'Котик кликает за тебя: автоклик, прокрутка, перетаскивание и запись макросов в одном приложении для Windows.','product.download':'Скачать для Windows','product.website':'Сайт проекта',
       'about.eyebrow':'// ИДЕЯ ОТДЕЛА','about.title':'Полезное может быть<br><em>интересным</em>','about.note':'NomberSoftware — часть экосистемы NOMBER и место для программ, которые хочется открывать снова.',
       'value.one.title':'Сделано с идеей','value.one.text':'Каждый проект начинается с задачи, которую хочется сделать проще и приятнее.','value.two.title':'Свободно исследовать','value.two.text':'KotoClicker открыт на GitHub: можно изучать код и следить за развитием.','value.three.title':'Со своим характером','value.three.text':'Практичные инструменты, в которых есть место деталям и настроению.',
-      'blog.eyebrow':'// НА СВЯЗИ С ЛАБОРАТОРИЕЙ','blog.title':'Заметки <em>разработчика</em>','blog.lede':'Новости и обновления прямо из Telegram-канала.','blog.source':'Публикации из Telegram','blog.loading':'Загружаем публикации…','blog.more':'Показать ещё','blog.empty.title':'Пока здесь тихо','blog.empty.text':'Первые записи появятся здесь автоматически после публикации в канале.','blog.empty.link':'Заглянуть в Telegram','blog.error':'Не удалось загрузить публикации.','blog.retry':'Попробовать снова','blog.open':'Открыть в Telegram','blog.updated':'Обновлено:','blog.document':'Файл',
+      'blog.eyebrow':'// НА СВЯЗИ С ЛАБОРАТОРИЕЙ','blog.title':'Заметки <em>разработчика</em>','blog.lede':'Новости и обновления прямо из Telegram-канала.','blog.source':'Публикации из Telegram','blog.loading':'Загружаем публикации…','blog.more':'Показать ещё','blog.all':'Все новости','blog.archive.eyebrow':'// ВСЕ ПУБЛИКАЦИИ','blog.archive.title':'Блог <em>NomberSoftware</em>','blog.archive.lede':'Все новости и записи из нашего Telegram-канала.','blog.back':'На главную','blog.empty.title':'Пока здесь тихо','blog.empty.text':'Первые записи появятся здесь автоматически после публикации в канале.','blog.empty.link':'Заглянуть в Telegram','blog.error':'Не удалось загрузить публикации.','blog.retry':'Попробовать снова','blog.open':'Открыть в Telegram','blog.updated':'Обновлено:','blog.document':'Файл',
       'support.eyebrow':'// ПОДДЕРЖАТЬ РАЗРАБОТКУ','support.title':'Нравится то, что я делаю?','support.text':'Ваша поддержка помогает новым идеям становиться настоящими проектами.',
       'footer.about':'Независимая лаборатория программ в экосистеме NOMBER.','footer.contact':'СВЯЗЬ','footer.follow':'СЛЕДИТЬ','footer.hub':'ХАБ ВСЕХ ПРОЕКТОВ','footer.hubtext':'Вся экосистема NOMBER','footer.part':'Часть экосистемы'
     },
@@ -19,13 +19,14 @@
       'product.label':'FIRST IN THE COLLECTION','product.status':'AVAILABLE','product.tag':'An autoclicker with a cat','product.desc':'Let the cat do the clicking: autoclicking, scrolling, drag and drop, and macro recording in one Windows app.','product.download':'Download for Windows','product.website':'Project website',
       'about.eyebrow':'// THE IDEA','about.title':'Useful can be<br><em>interesting</em>','about.note':'NomberSoftware is part of the NOMBER ecosystem and a home for software worth coming back to.',
       'value.one.title':'Built with purpose','value.one.text':'Every project begins with a task that could be simpler and a little more enjoyable.','value.two.title':'Open to explore','value.two.text':'KotoClicker is open on GitHub: explore the code and follow its development.','value.three.title':'Full of character','value.three.text':'Practical tools with room for personality and thoughtful details.',
-      'blog.eyebrow':'// NEWS FROM THE LAB','blog.title':'Developer <em>notes</em>','blog.lede':'News and updates straight from the Telegram channel.','blog.source':'Posts from Telegram','blog.loading':'Loading posts…','blog.more':'Show more','blog.empty.title':'Quiet in here for now','blog.empty.text':'The first posts will appear here automatically after they are published in the channel.','blog.empty.link':'Visit Telegram','blog.error':'Could not load posts.','blog.retry':'Try again','blog.open':'Open in Telegram','blog.updated':'Updated:','blog.document':'File',
+      'blog.eyebrow':'// NEWS FROM THE LAB','blog.title':'Developer <em>notes</em>','blog.lede':'News and updates straight from the Telegram channel.','blog.source':'Posts from Telegram','blog.loading':'Loading posts…','blog.more':'Show more','blog.all':'All news','blog.archive.eyebrow':'// ALL POSTS','blog.archive.title':'NomberSoftware <em>blog</em>','blog.archive.lede':'All news and posts from our Telegram channel.','blog.back':'Home','blog.empty.title':'Quiet in here for now','blog.empty.text':'The first posts will appear here automatically after they are published in the channel.','blog.empty.link':'Visit Telegram','blog.error':'Could not load posts.','blog.retry':'Try again','blog.open':'Open in Telegram','blog.updated':'Updated:','blog.document':'File',
       'support.eyebrow':'// SUPPORT DEVELOPMENT','support.title':'Enjoy what I make?','support.text':'Your support helps new ideas become real projects.',
       'footer.about':'An independent software lab in the NOMBER ecosystem.','footer.contact':'CONTACT','footer.follow':'FOLLOW','footer.hub':'ALL PROJECTS','footer.hubtext':'The NOMBER ecosystem','footer.part':'Part of the'
     }
   };
   let language = 'ru';
   try { const saved = localStorage.getItem('nomber-software-language'); if (saved === 'en' || saved === 'ru') language = saved; } catch (_) {}
+  const archivePage = document.documentElement.dataset.page === 'blog';
   let feedData = null;
   let shown = 0;
   let feedFailed = false;
@@ -88,7 +89,7 @@
     return article;
   };
   const renderFeed = () => {
-    feed.replaceChildren(); more.hidden = true; updated.textContent = '';
+    feed.replaceChildren(); if (more) more.hidden = true; updated.textContent = '';
     if (feedFailed) {
       const error = document.createElement('p'); error.className = 'feed-error'; error.textContent = t('blog.error');
       const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = t('blog.retry'); retry.addEventListener('click', loadFeed); error.append(retry); feed.append(error); return;
@@ -102,18 +103,18 @@
       const text = document.createElement('p'); text.textContent = t('blog.empty.text');
       const link = document.createElement('a'); link.href = 'https://t.me/NomberSoftware'; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = t('blog.empty.link');
       empty.append(title,text,link); feed.append(empty);
-    } else { posts.slice(0,shown).forEach(post => feed.append(postCard(post))); more.hidden = shown >= posts.length; }
+    } else { posts.slice(0,shown).forEach(post => feed.append(postCard(post))); if (more) more.hidden = shown >= posts.length; }
     if (feedData.updated) updated.textContent = `${t('blog.updated')} ${formatDate(feedData.updated)}`;
   };
   const loadFeed = async () => {
     feedFailed = false; feedData = null; renderFeed();
-    try { const response = await fetch('data/telegram.json', {cache:'no-cache'}); if (!response.ok) throw new Error(`HTTP ${response.status}`); feedData = await response.json(); shown = 4; }
+    try { const response = await fetch('data/telegram.json', {cache:'no-cache'}); if (!response.ok) throw new Error(`HTTP ${response.status}`); feedData = await response.json(); shown = archivePage ? 6 : 3; }
     catch (error) { console.error('Telegram feed:', error); feedFailed = true; }
     renderFeed();
   };
   const applyLanguage = () => {
     document.documentElement.lang = language;
-    document.title = language === 'ru' ? 'NomberSoftware — программы с характером' : 'NomberSoftware — software with character';
+    document.title = archivePage ? (language === 'ru' ? 'Блог — NomberSoftware' : 'Blog — NomberSoftware') : (language === 'ru' ? 'NomberSoftware — программы с характером' : 'NomberSoftware — software with character');
     document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (translations[language][key]) el.innerHTML = t(key); });
     document.querySelectorAll('[data-lang]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.lang === language)));
     renderFeed();
@@ -121,7 +122,7 @@
   document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => {
     language = button.dataset.lang; try { localStorage.setItem('nomber-software-language', language); } catch (_) {} applyLanguage();
   }));
-  more.addEventListener('click', () => { shown += 4; renderFeed(); });
+  more?.addEventListener('click', () => { shown += 6; renderFeed(); });
   document.getElementById('year').textContent = new Date().getFullYear();
   const nav = document.getElementById('nav'); addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), {passive:true});
   applyLanguage(); loadFeed();

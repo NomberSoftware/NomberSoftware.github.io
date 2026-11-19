@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=icon3">
-  <script src="assets/main.js" defer></script>
+  <link rel="stylesheet" href="assets/style.css?v=blog2">
+  <script src="assets/main.js?v=blog2" defer></script>
 </head>
 <body>
 <a class="skip" href="#software" data-i18n="skip">Перейти к программам</a>
@@ -31,11 +31,11 @@
   <nav class="nav-links" aria-label="Разделы сайта">
     <a href="#software" data-i18n="nav.software">Программы</a>
     <a href="#about" data-i18n="nav.about">О проекте</a>
-    <a href="#blog" data-i18n="nav.blog">Блог</a>
+    <a href="blog.html" data-i18n="nav.blog">Блог</a>
     <a href="#contact" data-i18n="nav.contact">Связь</a>
   </nav>
   <div class="nav-actions">
-    <a class="nav-blog" href="#blog" aria-label="Блог NomberSoftware"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1 .2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span data-i18n="nav.blog">Блог</span></a>
+    <a class="nav-blog" href="blog.html" aria-label="Блог NomberSoftware"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1 .2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span data-i18n="nav.blog">Блог</span></a>
     <a class="nav-donate" href="https://donatre.github.io/" target="_blank" rel="noopener noreferrer">♥ <span data-i18n="donate">Поддержать</span></a>
     <div class="lang" role="group" aria-label="Язык / Language"><button type="button" data-lang="ru" aria-pressed="true">RU</button><i aria-hidden="true">|</i><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
   </div>
@@ -92,8 +92,8 @@
     <div class="section-heading blog-heading"><div><p class="eyebrow" data-i18n="blog.eyebrow">// НА СВЯЗИ С ЛАБОРАТОРИЕЙ</p><h2 id="blog-title" data-i18n="blog.title">Заметки <em>разработчика</em></h2><p class="blog-lede" data-i18n="blog.lede">Новости и обновления прямо из Telegram-канала.</p></div><a class="telegram-link" href="https://t.me/NomberSoftware" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1 .2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span>@NomberSoftware</span></a></div>
     <div class="feed-shell">
       <div class="feed-header"><div class="feed-ident"><span class="feed-logo">N<span>·</span></span><div><strong>Nomber Software</strong><span data-i18n="blog.source">Публикации из Telegram</span></div></div><span class="feed-source">TELEGRAM FEED</span></div>
-      <div id="feed" class="feed" aria-live="polite"><p class="feed-loading" data-i18n="blog.loading">Загружаем публикации…</p></div>
-      <button id="feed-more" class="button button-glass feed-more" type="button" hidden data-i18n="blog.more">Показать ещё</button>
+      <div id="feed" class="feed home-feed" aria-live="polite"><p class="feed-loading" data-i18n="blog.loading">Загружаем публикации…</p></div>
+      <a class="button button-glass feed-more" href="blog.html" data-i18n="blog.all">Все новости</a>
       <p class="feed-updated" id="feed-updated"></p>
     </div>
   </section>

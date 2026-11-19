@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru" data-page="blog">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Блог — NomberSoftware</title>
+  <meta name="description" content="Новости и обновления NomberSoftware из Telegram-канала.">
+  <meta name="theme-color" content="#070811">
+  <link rel="canonical" href="https://nombersoftware.github.io/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Блог — NomberSoftware">
+  <meta property="og:description" content="Все новости и обновления NomberSoftware из Telegram.">
+  <meta property="og:url" content="https://nombersoftware.github.io/blog.html">
+  <meta property="og:image" content="https://nombersoftware.github.io/assets/scene.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=blog2">
+  <script src="assets/main.js?v=blog2" defer></script>
+</head>
+<body class="blog-page">
+<a class="skip" href="#feed" data-i18n="blog.source">Публикации из Telegram</a>
+<div class="ambient" aria-hidden="true"><div class="ambient-city"></div><div class="ambient-grid"></div></div>
+<header class="nav" id="nav">
+  <a class="brand" href="index.html#top" aria-label="NomberSoftware — на главную"><img src="assets/favicon.svg" width="32" height="32" alt=""><span>Nomber<b>Software</b></span></a>
+  <nav class="nav-links" aria-label="Разделы сайта">
+    <a href="index.html#software" data-i18n="nav.software">Программы</a>
+    <a href="index.html#about" data-i18n="nav.about">О проекте</a>
+    <a href="blog.html" data-i18n="nav.blog">Блог</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Связь</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="nav-blog" href="blog.html" aria-label="Блог NomberSoftware"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1 .2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span data-i18n="nav.blog">Блог</span></a>
+    <a class="nav-donate" href="https://donatre.github.io/" target="_blank" rel="noopener noreferrer">♥ <span data-i18n="donate">Поддержать</span></a>
+    <div class="lang" role="group" aria-label="Язык / Language"><button type="button" data-lang="ru" aria-pressed="true">RU</button><i aria-hidden="true">|</i><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+<main id="top">
+  <section class="wrap blog-archive" aria-labelledby="archive-title">
+    <a class="archive-back" href="index.html" data-i18n="blog.back">На главную</a>
+    <div class="section-heading blog-heading"><div><p class="eyebrow" data-i18n="blog.archive.eyebrow">// ВСЕ ПУБЛИКАЦИИ</p><h1 id="archive-title" data-i18n="blog.archive.title">Блог <em>NomberSoftware</em></h1><p class="blog-lede" data-i18n="blog.archive.lede">Все новости и записи из нашего Telegram-канала.</p></div><a class="telegram-link" href="https://t.me/NomberSoftware" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1 .2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></svg><span>@NomberSoftware</span></a></div>
+    <div class="feed-shell">
+      <div class="feed-header"><div class="feed-ident"><span class="feed-logo">N<span>·</span></span><div><strong>Nomber Software</strong><span data-i18n="blog.source">Публикации из Telegram</span></div></div><span class="feed-source">TELEGRAM FEED</span></div>
+      <div id="feed" class="feed" aria-live="polite"><p class="feed-loading" data-i18n="blog.loading">Загружаем публикации…</p></div>
+      <button id="feed-more" class="button button-glass feed-more" type="button" hidden data-i18n="blog.more">Показать ещё</button>
+      <p class="feed-updated" id="feed-updated"></p>
+    </div>
+  </section>
+</main>
+<footer class="footer wrap" id="contact">
+  <div class="footer-main"><div class="footer-about"><a class="brand" href="index.html#top"><img src="assets/favicon.svg" width="32" height="32" alt=""><span>Nomber<b>Software</b></span></a><p data-i18n="footer.about">Независимая лаборатория программ в экосистеме NOMBER.</p></div><div class="footer-col"><h2 data-i18n="footer.contact">СВЯЗЬ</h2><a href="https://t.me/Nomboerto" target="_blank" rel="noopener noreferrer">@Nomboerto</a><a href="mailto:NomberContact@proton.me">NomberContact@proton.me</a></div><div class="footer-col"><h2 data-i18n="footer.follow">СЛЕДИТЬ</h2><a href="https://t.me/NomberSoftware" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://github.com/NomberSoftware" target="_blank" rel="noopener noreferrer">GitHub</a></div><div class="ecosystem"><a class="hub-card" href="https://nomberprojects.github.io/"><span data-i18n="footer.hub">ХАБ ВСЕХ ПРОЕКТОВ</span><strong>NomberProjects</strong><small data-i18n="footer.hubtext">Вся экосистема NOMBER</small></a><a class="ecosystem-sibling" href="https://nomberobsidian.github.io/">NomberObsidian</a></div></div>
+  <div class="footer-bottom"><p>© <span id="year">2026</span> NOMBER</p></div>
+</footer>
+</body>
+</html>

@@ -17,3 +17,8 @@ img{display:block;max-width:100%}a{color:inherit}button{font:inherit}svg{display
 @media(max-width:400px){.brand span{font-size:14px}.nav-donate{padding-inline:8px}.lang{padding:2px}.lang button{padding:4px}.hero-heading h1{font-size:32px}.mascot-zone{height:325px}.product-main{gap:12px}.product-icon{width:67px;height:67px}.product-title h3{font-size:22px}.product-topline{font-size:9px}.support{gap:15px}.support-art{width:45px;height:45px}.support-copy{min-width:calc(100% - 60px)}.support .donate{margin-left:60px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 [hidden]{display:none!important}.post-gallery{display:grid}.post-gallery.multiple{grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.post-gallery.multiple .post-media img{height:200px}.post-media{position:relative}.post-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:45px;height:45px;border-radius:50%;background:rgba(0,0,0,.65);color:white;font-size:17px}
+
+/* News overview and full Telegram archive */
+.home-feed .post-text{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+.blog-archive{padding-top:128px;min-height:55vh}.archive-back{display:inline-flex;margin-bottom:30px;color:var(--cyan);font-size:14px;font-weight:600;text-decoration:none}.archive-back:hover{text-decoration:underline}.blog-archive h1{margin:12px 0 0;font-size:clamp(36px,5vw,58px);line-height:1.1;letter-spacing:-.055em;font-weight:800}.blog-archive h1 em{font-style:normal;color:var(--cyan)}
+@media(max-width:760px){.blog-archive{padding-top:105px}.blog-archive .telegram-link{margin-top:20px}}
